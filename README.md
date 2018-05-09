@@ -10,7 +10,9 @@ Install Pi Zero W
     apt-get update && apt-get upgrade
 
     apt install raspberrypi-kernel-headers git libgmp3-dev gawk qpdf bison flex make
-
+    
+    sudo reboot
+    
     git clone https://github.com/seemoo-lab/nexmon.git
     cd nexmon
 
@@ -18,6 +20,8 @@ Install Pi Zero W
     ./configure, make, make install
     ln -s /usr/local/lib/libisl.so /usr/lib/arm-linux-gnueabihf/libisl.so.10
     
+Compile Firmware:
+
     cd /home/pi/nexmon
     source setup_env.sh
     make
@@ -29,9 +33,13 @@ Install Pi Zero W
     make && make install
     apt-get remove wpasupplicant
 
-    sudo reboot
-
     ifconfig wlan0 down
     rmmod brcmfmac
     insmod ./nexmon/patches/bcm43430a1/7_45_41_26/nexmon/brcmfmac_kernel49/brcmfmac.ko
     ifconfig wlan0 up
+    
+** Possible Error **
+
+firmware compiled for wrong kernel?     
+Which Kernel:   `uname -a` 4.14?    
+Which Firmware: `find -name brcmfmac.ko`    
