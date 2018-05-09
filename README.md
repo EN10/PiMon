@@ -42,7 +42,13 @@ Replace Firmware:
     rmmod brcmfmac
     insmod ./nexmon/patches/bcm43430a1/7_45_41_46/nexmon/brcmfmac_4.14.y-nexmon/brcmfmac.ko
     ifconfig wlan0 up
-    
+
+load the modified driver after reboot:
+
+    cp /home/pi/nexmon/patches/bcm43430a1/7_45_41_46/nexmon/brcmfmac_4.14.y-nexmon/brcmfmac.ko /lib/modules/4.14.34+/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko
+    depmod -a
+    reboot
+
 ** Possible Error **
 
 firmware compiled for wrong kernel?     
