@@ -29,10 +29,15 @@ Compile Firmware:
     make
     make backup-firmware
     
+nexutils:
+    
     cd utilities/nexutil/
     make && make install
     apt-get remove wpasupplicant
 
+Replace Firmware:
+
+    sudo su
     ifconfig wlan0 down
     rmmod brcmfmac
     insmod ./nexmon/patches/bcm43430a1/7_45_41_46/nexmon/brcmfmac_4.14.y-nexmon/brcmfmac.ko
