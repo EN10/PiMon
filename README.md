@@ -35,7 +35,7 @@ Compile Firmware:
 
     ifconfig wlan0 down
     rmmod brcmfmac
-    insmod ./nexmon/patches/bcm43430a1/7_45_41_26/nexmon/brcmfmac_kernel49/brcmfmac.ko
+    insmod ./nexmon/patches/bcm43430a1/7_45_41_26/nexmon/brcmfmac_4.14.y-nexmon/brcmfmac.ko
     ifconfig wlan0 up
     
 ** Possible Error **
