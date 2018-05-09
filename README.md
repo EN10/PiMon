@@ -53,4 +53,7 @@ load the modified driver after reboot:
 
 firmware compiled for wrong kernel?     
 Which Kernel:   `uname -a` 4.14?    
-Which Firmware: `find -name brcmfmac.ko`    
+Which Firmware: `find -name brcmfmac.ko`   
+
+reboot seems to reset wlan0mon to mon0  
+Scan: `sudo iwlist wlan0 scan | grep ESSID`
