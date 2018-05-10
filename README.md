@@ -55,6 +55,16 @@ monitor mode:
     iw phy `iw dev wlan0 info | gawk '/wiphy/ {printf "phy" $2}'` interface add mon0 type monitor
     ifconfig mon0 up
     airodump mon0
+    
+aircrack:
+    
+    sudo apt-get install build-essential autoconf automake libtool pkg-config libnl-3-dev libnl-genl-3-dev libssl-dev libsqlite3-dev libpcre3-dev ethtool shtool rfkill zlib1g-dev libpcap-dev
+    git clone https://github.com/aircrack-ng/aircrack-ng.git
+    cd aircrack-ng
+    autoreconf -i
+    ./configure
+    make
+    make install
 
 ** Possible Error **
 
